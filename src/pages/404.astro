@@ -1,0 +1,39 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Nav from '../components/Nav.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<BaseLayout title="404 — Amir Noorafkan" description="Page not found.">
+  <Nav />
+  <main class="nf">
+    <div class="container">
+      <p class="code mono">404</p>
+      <h1>Line item not found</h1>
+      <p class="hint">This entry isn’t in the ledger. <a href="/">Back to the front page</a>.</p>
+    </div>
+  </main>
+  <Footer />
+</BaseLayout>
+
+<style>
+  .nf {
+    padding-block: clamp(6rem, 20vh, 12rem);
+  }
+
+  .code {
+    color: var(--accent);
+    font-size: 1rem;
+    letter-spacing: 0.14em;
+    margin-bottom: 1rem;
+  }
+
+  h1 {
+    font-size: clamp(2rem, 6vw, 3.5rem);
+  }
+
+  .hint {
+    margin-top: 1.25rem;
+    color: var(--muted);
+  }
+</style>

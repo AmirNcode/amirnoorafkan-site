@@ -13,6 +13,17 @@ interface Props {
 
 const { title, description } = Astro.props;
 const canonical = new URL(Astro.url.pathname, Astro.site);
+const ogImage = new URL('/og.png', Astro.site);
+
+const personSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Person',
+  name: 'Amir Noorafkan',
+  url: 'https://amirnoorafkan.com',
+  jobTitle: 'Engineer & Developer',
+  address: { '@type': 'PostalAddress', addressLocality: 'Toronto', addressCountry: 'CA' },
+  sameAs: ['https://github.com/AmirNcode', 'https://www.linkedin.com/in/amir-nrfkn'],
+};
 ---
 
 <html lang="en">
@@ -26,6 +37,18 @@ const canonical = new URL(Astro.url.pathname, Astro.site);
     <meta name="generator" content={Astro.generator} />
     <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#0b0e14" />
     <meta name="theme-color" media="(prefers-color-scheme: light)" content="#faf7f2" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImage} />
+    <script type="application/ld+json" set:html={JSON.stringify(personSchema)} />
     <script is:inline>
       const stored = localStorage.getItem('theme');
       const theme =

@@ -1,8 +1,16 @@
-# Cloudflare Pages / Netlify header rules (copied to dist/ at build).
-# Firebase uses firebase.json instead; this keeps caching parity on Pages.
+# Cloudflare Pages/Workers header rules (copied to dist/ at build).
+# Firebase uses firebase.json instead; this keeps parity on Cloudflare.
+#
+# no-transform on HTML stops Cloudflare from injecting the JavaScript
+# Detections bot script (/cdn-cgi/challenge-platform/...), which costs
+# ~2s of mobile main-thread time. Later rules override earlier ones for
+# the same header, so hashed assets below keep their long cache.
+
+/*
+  Cache-Control: public, max-age=0, must-revalidate, no-transform
 
 /_astro/*
-  Cache-Control: public, max-age=31536000, immutable
+  Cache-Control: public, max-age=31536000, immutable, no-transform
 
 /og.png
   Cache-Control: public, max-age=604800

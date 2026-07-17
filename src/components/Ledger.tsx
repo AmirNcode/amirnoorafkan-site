@@ -49,7 +49,17 @@ export default function Ledger({ entries }: Props) {
             </button>
             <div className="detail" id={detailId}>
               <div className="detail-inner">
-                <p>{entry.detail}</p>
+                <p>
+                  {entry.detail}
+                  {entry.link && (
+                    <>
+                      {' '}
+                      <a href={entry.link.href} target="_blank" rel="noopener" className="detail-link mono">
+                        {entry.link.label}
+                      </a>
+                    </>
+                  )}
+                </p>
               </div>
             </div>
           </li>

@@ -5,6 +5,7 @@ export const profile = {
   email: 'amir.noorafkan@gmail.com',
   github: 'https://github.com/AmirNcode',
   linkedin: 'https://www.linkedin.com/in/amir-nrfkn',
+  youtube: 'https://www.youtube.com/@amirnoorafkan',
   resume: '/AmirNoorafkan_Resume.pdf',
   stats: [
     { value: 160, prefix: '$', suffix: 'M+', label: 'in projects managed' },

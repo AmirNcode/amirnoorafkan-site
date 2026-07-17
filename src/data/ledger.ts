@@ -3,16 +3,25 @@ export type LedgerEntry = {
   title: string;
   value?: string;
   detail: string;
+  link?: { href: string; label: string };
   confirm?: boolean;
 };
 
 // Newest first. `confirm` marks entries Amir should double-check at preview review.
 export const ledger: LedgerEntry[] = [
   {
+    period: '2026 — now',
+    title: 'BJ ERP — digitizing an oil & gas manufacturer',
+    detail:
+      'Building a self-hosted ERP for a client that designs and manufactures oil and gas valves, wellheads, and Christmas trees. Department by department — HR first, then QC, finance, and procurement — each a CRUD app collecting data that used to live on paper, all running on the company’s own server infrastructure.',
+    link: { href: 'https://github.com/AmirNcode/bj-erp', label: 'Source ↗' },
+  },
+  {
     period: '2025 — now',
     title: 'Independent — building products',
     detail:
-      'Consulting for small businesses (Shopify optimization, SEO, store setup), prototyping SaaS products with Next.js and Supabase, learning to build faster with AI tools, and running the tech behind Haus of Balloons. Also started a YouTube channel focused on investing.',
+      'Consulting for small businesses (Shopify optimization, SEO, store setup), prototyping SaaS products with Next.js and Supabase, learning to build faster with AI tools, and running the tech behind Haus of Balloons. Also run a Persian-language YouTube channel on markets, stocks, and investing philosophy.',
+    link: { href: 'https://www.youtube.com/@amirnoorafkan', label: 'YouTube ↗' },
   },
   {
     period: 'Jun 2026',

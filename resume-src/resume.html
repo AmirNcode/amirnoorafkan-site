@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>Amir Noorafkan — Resume</title>
+<style>
+  @font-face { font-family: Archivo; src: url('../node_modules/@fontsource-variable/archivo/files/archivo-latin-wght-normal.woff2') format('woff2-variations'); font-weight: 100 900; }
+  @font-face { font-family: Plex; src: url('../node_modules/@fontsource/ibm-plex-sans/files/ibm-plex-sans-latin-400-normal.woff2') format('woff2'); font-weight: 400; }
+  @font-face { font-family: Plex; src: url('../node_modules/@fontsource/ibm-plex-sans/files/ibm-plex-sans-latin-500-normal.woff2') format('woff2'); font-weight: 500; }
+  @font-face { font-family: PlexMono; src: url('../node_modules/@fontsource/ibm-plex-mono/files/ibm-plex-mono-latin-500-normal.woff2') format('woff2'); font-weight: 500; }
+
+  @page { size: Letter; margin: 0; }
+  * { margin: 0; box-sizing: border-box; }
+  html, body { width: 8.5in; }
+  body {
+    font-family: Plex, sans-serif;
+    font-size: 9.4pt;
+    line-height: 1.42;
+    color: #171a21;
+    padding: 0.52in 0.6in 0.45in;
+  }
+
+  header { display: flex; justify-content: space-between; align-items: flex-end; }
+  h1 { font-family: Archivo, sans-serif; font-weight: 800; font-stretch: 110%; font-size: 23pt; letter-spacing: -0.01em; }
+  .sub { color: #6b7280; margin-top: 2pt; font-size: 9.6pt; }
+  .contact { text-align: right; font-family: PlexMono, monospace; font-size: 7.6pt; line-height: 1.65; color: #444; }
+  .contact a { color: inherit; text-decoration: none; }
+
+  .rule { height: 2.5pt; background: #b87400; border-radius: 2pt; margin: 8pt 0 10pt; }
+
+  h2 {
+    font-family: PlexMono, monospace; font-size: 8pt; font-weight: 500;
+    letter-spacing: 0.13em; text-transform: uppercase; color: #b87400;
+    margin: 9pt 0 5pt;
+  }
+
+  .job { margin-bottom: 7pt; }
+  .job-head { display: flex; justify-content: space-between; align-items: baseline; }
+  .role { font-weight: 500; font-size: 10pt; font-family: Archivo, sans-serif; font-stretch: 105%; }
+  .org { color: #444; }
+  .dates { font-family: PlexMono, monospace; font-size: 7.6pt; color: #6b7280; white-space: nowrap; }
+  ul { padding-left: 11pt; margin-top: 2.5pt; }
+  li { margin-bottom: 1.6pt; }
+  li::marker { color: #b87400; }
+  .val { font-family: PlexMono, monospace; font-size: 8.6pt; color: #8a5200; }
+
+  .compact p { margin-bottom: 2pt; }
+  .cols { display: grid; grid-template-columns: 1fr 1fr; gap: 0 18pt; }
+  .skills { display: flex; flex-wrap: wrap; gap: 3pt 5pt; margin-top: 2pt; }
+  .skills span {
+    font-family: PlexMono, monospace; font-size: 7.4pt; color: #333;
+    border: 0.7pt solid #d8d2c6; border-radius: 8pt; padding: 1.5pt 5.5pt;
+  }
+</style>
+</head>
+<body>
+  <header>
+    <div>
+      <h1>Amir Noorafkan</h1>
+      <p class="sub">Engineer &amp; developer — data, automation, project controls, web apps</p>
+    </div>
+    <div class="contact">
+      Toronto, Canada<br />
+      <a href="mailto:amir.noorafkan@gmail.com">amir.noorafkan@gmail.com</a><br />
+      <a href="https://amirnoorafkan.com">amirnoorafkan.com</a><br />
+      <a href="https://github.com/AmirNcode">github.com/AmirNcode</a> · <a href="https://www.linkedin.com/in/amir-nrfkn">in/amir-nrfkn</a>
+    </div>
+  </header>
+  <div class="rule"></div>
+
+  <p>
+    Analyst turned builder with 5+ years across data analytics, process automation, and project
+    controls — including cost control on a <span class="val">$160M+</span> construction portfolio —
+    who now also designs, codes, and ships production web applications end-to-end.
+  </p>
+
+  <h2>Experience</h2>
+
+  <div class="job">
+    <div class="job-head">
+      <p class="role">Independent — Projects &amp; Consulting</p>
+      <p class="dates">SEP 2025 – PRESENT</p>
+    </div>
+    <ul>
+      <li>Designed, built, and shipped three production web apps in six weeks (summer 2026): a live World Cup 2026 tracker (React PWA, adaptive-polling ESPN data), SimpleQR (client-side QR studio, React + TypeScript), and hausofballoons.ca for an events business — plus that company's full tech stack: website, email, and invoicing.</li>
+      <li>Consult for small businesses on Shopify optimization (SEO, product filtering, delivery zones) and prototype SaaS products with Next.js and Supabase.</li>
+    </ul>
+  </div>
+
+  <div class="job">
+    <div class="job-head">
+      <p class="role">Data Analyst, Project Controls (PMO) <span class="org">· Aecon Group Inc., Toronto</span></p>
+      <p class="dates">AUG 2023 – SEP 2025</p>
+    </div>
+    <ul>
+      <li>Ran earned-value cost control across a <span class="val">~$160M</span> portfolio of heavy construction, including the York and Goreway battery energy storage systems (<span class="val">~$120M</span> combined) delivered for Capital Power.</li>
+      <li>Automated extraction and dating of SAP project financials, eliminating manual collection (<span class="val">5 hrs/week</span> saved) and enabling comprehensive Power BI financial dashboards (Power Query, DAX).</li>
+      <li>Built a timesheet data pipeline for labour cost analysis — budget vs. actual hours, crew size, and productivity — surfacing oversized or over-budget crews for data-driven correction.</li>
+    </ul>
+  </div>
+
+  <div class="job">
+    <div class="job-head">
+      <p class="role">Senior Data Analyst, Finance Solutions <span class="org">· Element Fleet Management, Toronto</span></p>
+      <p class="dates">MAR 2023 – AUG 2023</p>
+    </div>
+    <ul>
+      <li>Led a Python system for parsing contracts and auditing billing discrepancies, expediting the audit of <span class="val">30,000+</span> agreements.</li>
+      <li>Automated weekly PostgreSQL/Snowflake data pulls with Alteryx, cutting processing from 3–4 hours to 1; maintained the team's Power BI KPI dashboard.</li>
+    </ul>
+  </div>
+
+  <div class="job">
+    <div class="job-head">
+      <p class="role">Data Analyst <span class="org">· Aecon Group Inc., Toronto</span></p>
+      <p class="dates">NOV 2021 – MAR 2023</p>
+    </div>
+    <ul>
+      <li>Led full-cycle delivery of an in-house fleet management data platform — database design, automated workflows, and leadership Power BI dashboards — driving adoption across teams.</li>
+      <li>Geospatial fuel-consumption analysis with Python (Pandas, GeoPandas) and Azure Databricks/Spark SQL; automated manual scheduling and reporting with Power Platform and REST APIs.</li>
+    </ul>
+  </div>
+
+  <div class="job compact">
+    <div class="job-head">
+      <p class="role">Earlier</p>
+      <p class="dates">2016 – 2021</p>
+    </div>
+    <ul>
+      <li><strong>Freelance web designer &amp; consultant</strong> (2020–21): e-commerce redesign and SEO driving <span class="val">+50%</span> traffic; built a World Cup 2022 campaign site for an ad agency.</li>
+      <li><strong>Co-founder, Atlys Networks</strong> (2019–20): data-privacy platform backed by startup accelerators, <span class="val">2,000+</span> installs.</li>
+      <li><strong>Research engineer co-op, ArcelorMittal Dofasco</strong> (2016–17): data-driven steel quality assessment via X-ray emissions; cut new-hire training time 80% with 5 SOPs.</li>
+    </ul>
+  </div>
+
+  <div class="cols">
+    <div>
+      <h2>Education</h2>
+      <div class="compact">
+        <p><strong>M.Eng., Aerospace Engineering</strong> — Toronto Metropolitan University, 2020</p>
+        <p><strong>B.Eng., Materials Engineering</strong> (Economics minor, Co-op) — McMaster University, 2018</p>
+      </div>
+    </div>
+    <div>
+      <h2>Skills</h2>
+      <div class="skills">
+        <span>Python</span><span>SQL</span><span>TypeScript</span><span>React</span><span>Power BI · DAX</span><span>Alteryx</span><span>Power Platform</span><span>SAP data</span><span>Earned value</span><span>Next.js</span><span>Astro</span><span>Supabase</span><span>Firebase</span>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

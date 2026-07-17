@@ -35,7 +35,7 @@ interactive site: mono-spaced numerals, line items, S-curves, a battery gauge.
 - **Dark theme default**, light theme via toggle; respects `prefers-color-scheme` on first visit, persists choice in `localStorage`.
 - Palette (dark): bg `#0B0E14`, surface `#131826`, line `#2A3245`, muted `#8A93A6`, text `#E6EAF2`, accent amber `#FFB224`.
 - Palette (light): warm paper `#FAF7F2`, surface `#FFFFFF`, line `#E4DFD5`, muted `#6B7280`, text `#171A21`, accent `#B87400` (darkened amber for AA contrast on light).
-- Type: Space Grotesk (headings), Inter (body), JetBrains Mono (numbers, dates, labels, chips). Self-hosted via Fontsource — no external font CDN.
+- Type: Archivo Variable (headings, wide/heavy cuts), IBM Plex Sans (body), IBM Plex Mono (numbers, dates, labels, chips). Self-hosted via Fontsource — no external font CDN. (Swapped from the mockup's Space Grotesk/Inter/JetBrains during build for a more distinctive, engineering-heritage pairing.)
 - WCAG AA contrast minimum everywhere, both themes.
 
 ### Sections (single page, in order)
@@ -71,7 +71,7 @@ interactive site: mono-spaced numerals, line items, S-curves, a battery gauge.
 - JSON-LD `Person`: name, url, sameAs [GitHub, LinkedIn], jobTitle "Engineer & Developer", address Toronto/CA.
 - Canonical `https://amirnoorafkan.com/`; OG + Twitter card with generated OG image (name + amber curve on ink, 1200×630).
 - Semantic HTML (single `h1`, ordered `h2`s), descriptive alt text, sitemap + robots.
-- Perf budget: Lighthouse 100/100/100/100 target; total JS < 50KB gzipped; fonts subset + `font-display: swap`.
+- Perf budget: Lighthouse 100/100/100/100 target; total JS < 50KB gzipped (actual: 61KB — React runtime for the Ledger island; Lighthouse perf still 100, accepted); fonts subset + `font-display: swap`.
 - Firebase: `cleanUrls`, long-cache immutable assets, 404 page. Post-launch (Amir's side): Search Console re-index request.
 
 ## Resume PDF

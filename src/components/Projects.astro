@@ -1,0 +1,46 @@
+---
+import ProjectCard from './ProjectCard.astro';
+import { projects } from '../data/projects';
+import worldcupShot from '../assets/shots/worldcup.png';
+import hausShot from '../assets/shots/hausofballoons.png';
+import simpleqrShot from '../assets/shots/simpleqr.png';
+import type { ImageMetadata } from 'astro';
+
+const shots: Record<string, ImageMetadata> = {
+  worldcup: worldcupShot,
+  hausofballoons: hausShot,
+  simpleqr: simpleqrShot,
+};
+---
+
+<section id="projects" aria-labelledby="projects-heading">
+  <div class="container">
+    <p class="kicker">01 / Shipped</p>
+    <h2 id="projects-heading">Projects</h2>
+    <p class="section-lede">Real, live, and in use — with source you can read.</p>
+    <div class="grid">
+      {projects.map((p) => <ProjectCard project={p} shot={shots[p.slug]!} />)}
+    </div>
+  </div>
+</section>
+
+<style>
+  .section-lede {
+    margin-top: 0.75rem;
+    color: var(--muted);
+    max-width: 44ch;
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+    margin-top: 2.5rem;
+  }
+
+  @media (min-width: 960px) {
+    .grid {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+  }
+</style>

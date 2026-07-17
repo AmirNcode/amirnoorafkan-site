@@ -1,0 +1,171 @@
+/* ————————————————————————————————————————————
+   The Ledger — design tokens & base styles
+   ———————————————————————————————————————————— */
+
+:root {
+  --bg: #0b0e14;
+  --surface: #131826;
+  --line: #2a3245;
+  --muted: #8a93a6;
+  --text: #e6eaf2;
+  --accent: #ffb224;
+  --accent-ink: #0b0e14; /* text on accent fills */
+  --grid-line: rgb(42 50 69 / 0.35);
+  --shadow: 0 24px 48px -24px rgb(0 0 0 / 0.5);
+
+  --font-display: 'Archivo Variable', 'Archivo', sans-serif;
+  --font-body: 'IBM Plex Sans', sans-serif;
+  --font-mono: 'IBM Plex Mono', monospace;
+
+  --container: 1100px;
+  --section-gap: clamp(4.5rem, 12vw, 8rem);
+  --radius: 14px;
+
+  color-scheme: dark;
+}
+
+:root[data-theme='light'] {
+  --bg: #faf7f2;
+  --surface: #ffffff;
+  --line: #e4dfd5;
+  --muted: #6b7280;
+  --text: #171a21;
+  --accent: #b87400;
+  --accent-ink: #ffffff;
+  --grid-line: rgb(228 223 213 / 0.6);
+  --shadow: 0 24px 48px -28px rgb(23 26 33 / 0.18);
+  color-scheme: light;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-body);
+  font-size: 1.0625rem;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+  transition: background-color 240ms ease, color 240ms ease;
+}
+
+::selection {
+  background: var(--accent);
+  color: var(--accent-ink);
+}
+
+img,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  color: inherit;
+  text-decoration-color: var(--line);
+  text-underline-offset: 3px;
+  transition: text-decoration-color 160ms ease, color 160ms ease;
+}
+
+a:hover {
+  text-decoration-color: var(--accent);
+  color: var(--accent);
+}
+
+button {
+  font: inherit;
+  color: inherit;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--font-display);
+  line-height: 1.05;
+  text-wrap: balance;
+}
+
+h1 {
+  font-size: clamp(2.75rem, 9vw, 5.5rem);
+  font-weight: 800;
+  font-stretch: 110%;
+  letter-spacing: -0.015em;
+}
+
+h2 {
+  font-size: clamp(1.75rem, 4.5vw, 2.5rem);
+  font-weight: 700;
+  font-stretch: 105%;
+}
+
+.container {
+  max-width: var(--container);
+  margin-inline: auto;
+  padding-inline: clamp(1.25rem, 5vw, 2.5rem);
+}
+
+section {
+  padding-block-start: var(--section-gap);
+  scroll-margin-top: 5rem;
+}
+
+/* mono kicker label, e.g. "01 / PROJECTS" */
+.kicker {
+  font-family: var(--font-mono);
+  font-size: 0.8125rem;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--accent);
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1.25rem;
+}
+
+.kicker::after {
+  content: '';
+  height: 1px;
+  flex: 0 1 72px;
+  background: var(--line);
+}
+
+.mono {
+  font-family: var(--font-mono);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

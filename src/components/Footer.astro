@@ -1,0 +1,59 @@
+---
+import { profile } from '../data/profile';
+
+const updated = new Date().toLocaleDateString('en-CA', {
+  year: 'numeric',
+  month: 'short',
+});
+---
+
+<footer class="footer">
+  <div class="container footer-inner">
+    <nav class="footer-links" aria-label="Contact links">
+      <a href={`mailto:${profile.email}`}>Email</a>
+      <a href={profile.github} rel="me noopener" target="_blank">GitHub</a>
+      <a href={profile.linkedin} rel="me noopener" target="_blank">LinkedIn</a>
+      <a href={profile.resume}>Resume<span class="mono ext">&nbsp;PDF</span></a>
+    </nav>
+    <p class="colophon mono">
+      Designed &amp; built by Amir · Astro · Firebase · Updated {updated}
+    </p>
+  </div>
+</footer>
+
+<style>
+  .footer {
+    margin-top: var(--section-gap);
+    border-top: 1px solid var(--line);
+    padding-block: 2.5rem 3rem;
+  }
+
+  .footer-inner {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+  }
+
+  .footer-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.75rem;
+    font-family: var(--font-display);
+    font-weight: 500;
+  }
+
+  .footer-links a {
+    text-decoration: none;
+  }
+
+  .ext {
+    font-size: 0.6875rem;
+    color: var(--muted);
+  }
+
+  .colophon {
+    font-size: 0.75rem;
+    color: var(--muted);
+    letter-spacing: 0.04em;
+  }
+</style>

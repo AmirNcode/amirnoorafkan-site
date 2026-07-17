@@ -1,0 +1,117 @@
+---
+---
+
+<header class="nav">
+  <div class="container nav-inner">
+    <a href="#top" class="wordmark mono" aria-label="Back to top">AN<span class="cursor">_</span></a>
+    <div class="nav-right">
+      <span class="battery" role="img" aria-label="Reading progress">
+        <span class="battery-body"><span id="battery-fill"></span></span>
+        <span class="battery-cap"></span>
+      </span>
+      <button id="theme-toggle" aria-label="Switch theme" title="Switch theme">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+          <circle cx="12" cy="12" r="4" class="sun-core"></circle>
+          <path class="sun-rays" d="M12 2v3M12 19v3M2 12h3M19 12h3M4.9 4.9l2.1 2.1M17 17l2.1 2.1M19.1 4.9L17 7M7 17l-2.1 2.1"></path>
+        </svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<style>
+  .nav {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background: color-mix(in srgb, var(--bg) 82%, transparent);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--line);
+  }
+
+  .nav-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 3.5rem;
+  }
+
+  .wordmark {
+    font-weight: 500;
+    font-size: 1rem;
+    letter-spacing: 0.06em;
+    text-decoration: none;
+  }
+
+  .wordmark:hover {
+    color: var(--text);
+  }
+
+  .wordmark:hover .cursor {
+    color: var(--accent);
+  }
+
+  .cursor {
+    color: var(--accent);
+    animation: blink 1.2s steps(2) infinite;
+  }
+
+  @keyframes blink {
+    50% {
+      opacity: 0;
+    }
+  }
+
+  .nav-right {
+    display: flex;
+    align-items: center;
+    gap: 0.875rem;
+  }
+
+  .battery {
+    display: inline-flex;
+    align-items: center;
+  }
+
+  .battery-body {
+    display: inline-block;
+    width: 30px;
+    height: 13px;
+    border: 1.5px solid var(--muted);
+    border-radius: 3px;
+    padding: 1.5px;
+  }
+
+  #battery-fill {
+    display: block;
+    height: 100%;
+    width: 4%;
+    background: var(--accent);
+    border-radius: 1px;
+    transition: width 120ms linear;
+  }
+
+  .battery-cap {
+    width: 3px;
+    height: 6px;
+    background: var(--muted);
+    border-radius: 0 2px 2px 0;
+    margin-left: 1.5px;
+  }
+
+  #theme-toggle {
+    display: grid;
+    place-items: center;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 8px;
+    color: var(--muted);
+    transition: color 160ms ease, background-color 160ms ease;
+  }
+
+  #theme-toggle:hover {
+    color: var(--accent);
+    background: var(--surface);
+  }
+</style>

@@ -1,0 +1,11 @@
+// Cloudflare Workers config — static assets only, no server code.
+// Presence of this file stops Cloudflare's build auto-config from injecting
+// the @astrojs/cloudflare adapter; the site is a pure static Astro build.
+{
+  "name": "my-website",
+  "compatibility_date": "2026-07-17",
+  "assets": {
+    "directory": "./dist",
+    "not_found_handling": "404-page"
+  }
+}

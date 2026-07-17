@@ -1,0 +1,138 @@
+---
+import { profile } from '../data/profile';
+---
+
+<section class="hero" id="top" aria-label="Introduction">
+  <svg class="hero-bg" viewBox="0 0 1200 640" preserveAspectRatio="xMidYMax slice" aria-hidden="true">
+    <defs>
+      <pattern id="grid" width="60" height="60" patternUnits="userSpaceOnUse">
+        <path d="M 60 0 L 0 0 0 60" fill="none" stroke="var(--grid-line)" stroke-width="1"></path>
+      </pattern>
+    </defs>
+    <rect width="1200" height="640" fill="url(#grid)"></rect>
+    <path
+      class="s-curve"
+      d="M 40 600 C 380 590, 420 520, 600 330 C 780 140, 860 80, 1160 48"
+      fill="none"
+      stroke="var(--accent)"
+      stroke-width="2.5"
+      stroke-linecap="round"
+      pathLength="1"></path>
+    <circle class="curve-dot" cx="600" cy="330" r="5" fill="var(--accent)"></circle>
+  </svg>
+
+  <div class="container hero-inner">
+    <p class="kicker">{profile.location}</p>
+    <h1>Amir Noorafkan</h1>
+    <p class="tagline">{profile.tagline}</p>
+    <span class="rule" aria-hidden="true"></span>
+    <nav class="hero-links" aria-label="Profiles and resume">
+      <a href={profile.github} rel="me noopener" target="_blank">GitHub</a>
+      <a href={profile.linkedin} rel="me noopener" target="_blank">LinkedIn</a>
+      <a href={`mailto:${profile.email}`}>Email</a>
+      <a href={profile.resume} class="resume-link">Resume<span class="mono ext">&nbsp;PDF</span></a>
+    </nav>
+  </div>
+</section>
+
+<style>
+  .hero {
+    position: relative;
+    padding-block: clamp(5rem, 16vh, 9rem) clamp(3rem, 8vh, 5rem);
+    overflow: hidden;
+  }
+
+  .hero-bg {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    -webkit-mask-image: linear-gradient(to bottom, transparent, #000 18%, #000 82%, transparent);
+    mask-image: linear-gradient(to bottom, transparent, #000 18%, #000 82%, transparent);
+  }
+
+  .s-curve {
+    stroke-dasharray: 1;
+    stroke-dashoffset: 1;
+    opacity: 0.85;
+    animation: draw 1.5s cubic-bezier(0.65, 0, 0.35, 1) 0.2s forwards;
+  }
+
+  .curve-dot {
+    opacity: 0;
+    animation: appear 0.4s ease 1.1s forwards;
+  }
+
+  @keyframes draw {
+    to {
+      stroke-dashoffset: 0;
+    }
+  }
+
+  @keyframes appear {
+    to {
+      opacity: 1;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .s-curve {
+      stroke-dashoffset: 0;
+      animation: none;
+    }
+
+    .curve-dot {
+      opacity: 1;
+      animation: none;
+    }
+  }
+
+  .hero-inner {
+    position: relative;
+  }
+
+  .tagline {
+    max-width: 34ch;
+    margin-top: 1.5rem;
+    font-size: clamp(1.125rem, 2.6vw, 1.375rem);
+    line-height: 1.5;
+    color: var(--muted);
+    text-wrap: balance;
+  }
+
+  .rule {
+    display: block;
+    width: 76px;
+    height: 4px;
+    margin-block: 1.75rem;
+    background: var(--accent);
+    border-radius: 2px;
+    transform-origin: left;
+    animation: grow 0.7s cubic-bezier(0.22, 1, 0.36, 1) 0.9s backwards;
+  }
+
+  @keyframes grow {
+    from {
+      transform: scaleX(0);
+    }
+  }
+
+  .hero-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    font-family: var(--font-display);
+    font-weight: 500;
+    font-size: 1.0625rem;
+  }
+
+  .hero-links a {
+    text-decoration: none;
+    padding-block: 0.25rem;
+  }
+
+  .ext {
+    font-size: 0.6875rem;
+    color: var(--muted);
+  }
+</style>
